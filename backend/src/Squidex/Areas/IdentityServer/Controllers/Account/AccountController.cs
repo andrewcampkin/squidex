@@ -203,7 +203,7 @@ namespace Squidex.Areas.IdentityServer.Controllers.Account
                 return await LoginViewAsync(returnUrl, true, true);
             }
 
-            var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, true);
+            var result = await signInManager.PasswordSignInAsync(model.Email, model.Password, true, false);
 
             if (!result.Succeeded)
             {
