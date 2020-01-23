@@ -45,6 +45,9 @@ export class DropdownComponent extends StatefulControlComponent<State, any[]> im
     @Input()
     public canSearch = true;
 
+    @Input()
+    public separated = false;
+
     @ContentChildren(TemplateRef)
     public templates: QueryList<any>;
 
@@ -107,15 +110,11 @@ export class DropdownComponent extends StatefulControlComponent<State, any[]> im
 
     public ngAfterContentInit() {
         if (this.templates.length === 1) {
-            this.templateItem = this.templateSelection = this.templates.first;
+            this.templateItem = this.templates.first;
+            this.templateSelection = this.templates.first;
         } else {
-            this.templates.forEach(template => {
-                if (template.name === 'selection') {
-                    this.templateSelection = template;
-                } else {
-                    this.templateItem = template;
-                }
-            });
+            this.templateItem = this.templates.first;
+            this.templateSelection = this.templates.last;
         }
 
         if (this.templateItem) {

@@ -41,9 +41,12 @@ const NO_EMIT = { emitEvent: false };
             <ng-template let-content="$implicit" let-context="context">
                 <span class="truncate" [innerHTML]="content.name | sqxHighlight:context"></span>
             </ng-template>
-        </sqx-dropdown>`,
-    styles: [
-        '.truncate { min-height: 1.5rem; }'
+        </sqx-dropdown>
+    `,
+    styles: [`
+        .truncate {
+            min-height: 1.5rem;
+        }`
     ],
     providers: [SQX_REFERENCES_DROPDOWN_CONTROL_VALUE_ACCESSOR],
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -143,7 +146,7 @@ export class ReferencesDropdownComponent extends StatefulControlComponent<State,
             this.selectedId = obj;
 
             this.selectContent();
-        } if (Types.isArrayOfString(obj)) {
+        } else if (Types.isArrayOfString(obj)) {
             this.selectedId = obj[0];
 
             this.selectContent();

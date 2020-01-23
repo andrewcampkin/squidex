@@ -32,7 +32,6 @@ import {
     ContentListHeaderComponent,
     ContentListWidthPipe,
     ContentPageComponent,
-    ContentReferencesWidthPipe,
     ContentSelectorItemComponent,
     ContentsFiltersPageComponent,
     ContentsPageComponent,
@@ -40,13 +39,15 @@ import {
     ContentStatusComponent,
     ContentValueComponent,
     ContentValueEditorComponent,
+    CustomViewEditorComponent,
     DueTimeSelectorComponent,
     FieldEditorComponent,
     FieldLanguagesComponent,
     PreviewButtonComponent,
     ReferenceItemComponent,
     ReferencesEditorComponent,
-    SchemasPageComponent
+    SchemasPageComponent,
+    StockPhotoEditorComponent
 } from './declarations';
 
 const routes: Routes = [
@@ -106,9 +107,9 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
+        RouterModule.forChild(routes),
         SqxFrameworkModule,
-        SqxSharedModule,
-        RouterModule.forChild(routes)
+        SqxSharedModule
     ],
     declarations: [
         ArrayEditorComponent,
@@ -118,7 +119,6 @@ const routes: Routes = [
         ContentComponent,
         ContentFieldComponent,
         ContentListCellDirective,
-        ContentReferencesWidthPipe,
         ContentListWidthPipe,
         ContentListFieldComponent,
         ContentListHeaderComponent,
@@ -131,13 +131,15 @@ const routes: Routes = [
         ContentStatusComponent,
         ContentValueComponent,
         ContentValueEditorComponent,
+        CustomViewEditorComponent,
         DueTimeSelectorComponent,
         FieldEditorComponent,
         FieldLanguagesComponent,
         PreviewButtonComponent,
         ReferenceItemComponent,
         ReferencesEditorComponent,
-        SchemasPageComponent
+        SchemasPageComponent,
+        StockPhotoEditorComponent
     ]
 })
 export class SqxFeatureContentModule {}
